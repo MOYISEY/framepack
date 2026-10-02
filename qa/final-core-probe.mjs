@@ -24,8 +24,18 @@ const result=await page.evaluate(async(coreUrl)=>{
   const actualToBlob=HTMLCanvasElement.prototype.toBlob;let encoderCalls=0;
   HTMLCanvasElement.prototype.toBlob=function(...args){encoderCalls++;return actualToBlob.apply(this,args);};
   let byteBudget;try{await core.processImage(file,'budget',{widths:[40,60,120],format:'png',quality:80,background:'#ffffff'},new AbortController().signal,()=>{},1);byteBudget='unexpected success';}catch(e){byteBudget=e.message;}finally{HTMLCanvasElement.prototype.toBlob=actualToBlob;}
+  const previews=[];
+  for(const [width,height] of [[256,8192],[8192,256],[1,8192],[50,20]]) {
+    c.width=width;c.height=height;ctx.fillStyle='red';ctx.fillRect(0,0,width,height);
+    const sourceFile=new File([await core.encode(c,'image/png',1)],'preview.png',{type:'image/png'});
+    const output=await core.processImage(sourceFile,'preview',{widths:[640,1280,1920],format:'png',quality:80,background:'#ffffff'},new AbortController().signal,()=>{});
+    const preview=await createImageBitmap(output.preview),variant=await createImageBitmap(output.variants.at(-1).blob);
+    const expectedWidth=Math.min(width,1920),expectedHeight=Math.max(1,Math.round(height*expectedWidth/width));
+    previews.push({source:[width,height],preview:[preview.width,preview.height],variant:[variant.width,variant.height],expectedVariant:[expectedWidth,expectedHeight],pass:preview.width>=1&&preview.width<=256&&preview.height>=1&&preview.height<=256&&preview.width<=width&&preview.height<=height&&variant.width===expectedWidth&&variant.height===expectedHeight});
+    preview.close();variant.close();
+  }
   c.width=0;c.height=0;
-  return {pngLength,jpegMultipleSOF,webpMismatch,activeRead,preAbortedRead,byteBudget,encoderCalls,pass:pngLength==='corrupt'&&jpegMultipleSOF==='corrupt'&&webpMismatch==='corrupt'&&activeRead==='AbortError'&&preAbortedRead==='AbortError'&&byteBudget==='output'&&encoderCalls===2};
+  return {pngLength,jpegMultipleSOF,webpMismatch,activeRead,preAbortedRead,byteBudget,encoderCalls,previews,pass:pngLength==='corrupt'&&jpegMultipleSOF==='corrupt'&&webpMismatch==='corrupt'&&activeRead==='AbortError'&&preAbortedRead==='AbortError'&&byteBudget==='output'&&encoderCalls===2&&previews.every(p=>p.pass)};
 },coreUrl);
 await fs.writeFile('qa/final-core-probe-results.json',JSON.stringify(result,null,2));
 console.log(JSON.stringify(result,null,2));await browser.close();

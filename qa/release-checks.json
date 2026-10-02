@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-02T09:37:03.589Z",
+  "date": "2026-10-02T09:56:54.796Z",
   "unit": {
     "passed": 19
   },
   "productionE2E": {
-    "passed": 33,
+    "passed": 36,
     "failed": 0,
     "engines": [
       "chromium",
@@ -29,9 +29,17 @@
       "sha256": "2d8bba12ea68075275554af9601dcd5a496194a35e342b5c35a8d9b9cb4ab1f1"
     },
     {
-      "name": "index-CnjkZXOQ.js",
-      "bytes": 275968,
-      "sha256": "84a1684c92d682258ea62722154033846e4ea754695d1ecd21d441e671d93b46"
+      "name": "index-DVQKLFbO.js",
+      "bytes": 276064,
+      "sha256": "f3cd26d91e024922647ca486145ef4a52bcaf5e659f335770a8de7713211c124"
     }
-  ]
+  ],
+  "thumbnailLimit": {
+    "width": 256,
+    "height": 256,
+    "regressionSource": {
+      "width": 256,
+      "height": 8192
+    }
+  }
 }

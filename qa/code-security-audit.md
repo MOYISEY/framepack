@@ -45,6 +45,19 @@ The latest `core.ts`, `export.ts`, `zip.worker.ts` and the remaining-budget call
 
 New direct browser evidence: `final-core-probe-results.json` (`pass: true`). Run `node qa/final-core-probe.mjs`; it transpiles the reviewed core with the installed TypeScript compiler and executes it in Chromium through a data module, without requiring Vite. The final UI rerun used `npm run preview -- --port 4175 --configLoader native` and `node qa/audit-ui-probe.mjs` against the built production bundle. Full dev-server repro can require the main agent's approved environment when esbuild dependency re-optimization is blocked by the filesystem sandbox.
 
+### Final preview edge-case review
+
+The last change at `core.ts:94-99` was independently reviewed and exercised in Chromium. The thumbnail scale is now `min(1, 256 / source.width, 256 / source.height)`, with each rounded side bounded below by one pixel. Since the scale is constrained by both sides, neither thumbnail dimension exceeds 256 px and small sources are not enlarged. Only the preview draw receives an explicit height; responsive variant drawing continues to use the original source ratio.
+
+| Synthetic source | Decoded PNG preview | Decoded largest exported variant | Result |
+| --- | --- | --- | --- |
+| 256 x 8192 | 8 x 256 | 256 x 8192 | Pass |
+| 8192 x 256 | 256 x 8 | 1920 x 60 | Pass |
+| 1 x 8192 | 1 x 256 | 1 x 8192 | Pass |
+| 50 x 20 | 50 x 20 | 50 x 20 | Pass |
+
+`final-core-probe.mjs` and `final-core-probe-results.json` now include these four decoded-pixel-dimension regressions; the combined result remains `pass: true`. No new issue was found. This additional independent run covers Chromium only and does not expand the Firefox/Safari scope below.
+
 ## Scope and remaining limits
 
 The audit browser runs cover Chromium 153 and the installed Playwright WebKit build on Windows. **Actual Safari was not tested.** The Firefox audit probe could not create a page in this sandbox (`browser.newPage` raised `Cannot read properties of undefined (reading '_page')`); therefore this reviewer makes no Firefox pass claim. The main agent's separate E2E matrix, live deployment, dependency audit and offline checks are outside this independent review.

@@ -6,5 +6,83 @@
   "preAbortedRead": "AbortError",
   "byteBudget": "output",
   "encoderCalls": 2,
+  "previews": [
+    {
+      "source": [
+        256,
+        8192
+      ],
+      "preview": [
+        8,
+        256
+      ],
+      "variant": [
+        256,
+        8192
+      ],
+      "expectedVariant": [
+        256,
+        8192
+      ],
+      "pass": true
+    },
+    {
+      "source": [
+        8192,
+        256
+      ],
+      "preview": [
+        256,
+        8
+      ],
+      "variant": [
+        1920,
+        60
+      ],
+      "expectedVariant": [
+        1920,
+        60
+      ],
+      "pass": true
+    },
+    {
+      "source": [
+        1,
+        8192
+      ],
+      "preview": [
+        1,
+        256
+      ],
+      "variant": [
+        1,
+        8192
+      ],
+      "expectedVariant": [
+        1,
+        8192
+      ],
+      "pass": true
+    },
+    {
+      "source": [
+        50,
+        20
+      ],
+      "preview": [
+        50,
+        20
+      ],
+      "variant": [
+        50,
+        20
+      ],
+      "expectedVariant": [
+        50,
+        20
+      ],
+      "pass": true
+    }
+  ],
   "pass": true
 }

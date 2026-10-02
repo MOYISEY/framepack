@@ -1,11 +1,11 @@
 # Framepack QA
 
-Date: 2026-10-02. Platform: Windows, Node 24. Final local run: **19/19 unit, 33/33 production E2E**, zero failures. `npm audit`: **0 vulnerabilities**. [Release evidence](release-checks.json). No claim of real Safari or hardware mobile-device testing.
+Date: 2026-10-02. Platform: Windows, Node 24. Final local run: **19/19 unit, 36/36 production E2E**, zero failures. `npm audit`: **0 vulnerabilities**. [Release evidence](release-checks.json). No claim of real Safari or hardware mobile-device testing.
 
 ## Scope
 
 - 19 unit tests: PNG/WebP/JPEG header parsing, all 8 EXIF orientations, large headers, animation, corrupt bounds and EXIF offsets, filename safety/collisions, width deduplication, HTML escaping and signed reduction math.
-- 11 E2E scenarios per browser engine, run against the production static build: Chromium, Firefox and Playwright WebKit. Real ZIP downloads are unpacked and every image is independently decoded with Sharp; pixel dimensions, MIME, exact byte length, uniqueness, source width bounds and every `srcset` descriptor must agree with the manifest. Originals are absent from the export and the app forgets the queue on reload.
+- 12 E2E scenarios per browser engine, run against the production static build: Chromium, Firefox and Playwright WebKit. Real ZIP downloads are unpacked and every image is independently decoded with Sharp; pixel dimensions, MIME, exact byte length, uniqueness, source width bounds and every `srcset` descriptor must agree with the manifest. Originals are absent from the export and the app forgets the queue on reload.
 - Synthetic fixtures: mirrored/rotated JPEG orientations 1–8, transparent PNG and WebP, explicit green JPEG background, 40 px source, duplicates and Unicode/path-shaped names, corrupt and SVG-disguised PNG, APNG/animated WebP, 12 MP accepted and 15 MP rejected, count/per-file/aggregate byte limits, early output-budget rejection, Canvas MIME fallback, cancel/retry/clear, packing cancellation and later export.
 - PNG orientation reference pixels are compared with independently auto-oriented source quadrants. This verifies rotation and reflection, beyond width/height assertions.
 - Language/theme matrix: EN/RU, light/dark, keyboard Space and focusable table, 320/375/390 px mobile/touch emulation, desktop, 200% text reflow, error/cancel/retry states and automated axe scans. Automated axe results are not a WCAG conformance certification; real screen readers were not tested.
@@ -31,6 +31,6 @@ Exact public URL, source/deployment commits and final run results are recorded i
 
 ## Live release
 
-https://moyisey.github.io/framepack/ — HTTP 200; live CSS/JS SHA-256 exactly match the locally verified production build. Full public-site E2E: **33/33 passed**, Chromium/Firefox/Playwright WebKit. [Live evidence](live-checks.json). The recorded source commit is the functional release; the final documentation commit adds this evidence and removes trailing blank lines, with identical built assets.
+https://moyisey.github.io/framepack/ — HTTP 200; live CSS/JS SHA-256 exactly match the locally verified production build. Full public-site E2E: **33/33 passed**, Chromium/Firefox/Playwright WebKit. [Live evidence](live-checks.json). The archived live run covers the initial functional release. The final preview hardening also verifies a 256 × 8192 source: queue thumbnails stay within 256 × 256, while the ZIP keeps the true 256 × 8192 dimensions. The full updated production suite passes 36/36.
 
 GitHub [Quality](https://github.com/MOYISEY/framepack/actions/runs/36991185076) and [Pages deployment](https://github.com/MOYISEY/framepack/actions/runs/36991291197) succeeded. The repository is new; no existing project, portfolio or profile README was modified.

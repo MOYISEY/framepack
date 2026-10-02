@@ -91,8 +91,9 @@ export async function processImage(file: File, stem: string, settings: Settings,
   try {
     checkAbort(signal); if(bitmap.width!==source.width || bitmap.height!==source.height) fail('orientation');
     const ctx = canvas.getContext('2d'); if(!ctx) fail('encode');
-    const draw = (width:number, background:boolean) => { canvas.width=width; canvas.height=Math.max(1,Math.round(source.height*width/source.width)); ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high'; if(background) { ctx.fillStyle=settings.background; ctx.fillRect(0,0,canvas.width,canvas.height); } ctx.drawImage(bitmap,0,0,canvas.width,canvas.height); };
-    draw(Math.min(256,source.width),false); const preview = await encode(canvas,'image/png',1); checkAbort(signal);
+    const draw = (width:number, background:boolean, height?:number) => { canvas.width=width; canvas.height=height??Math.max(1,Math.round(source.height*width/source.width)); ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high'; if(background) { ctx.fillStyle=settings.background; ctx.fillRect(0,0,canvas.width,canvas.height); } ctx.drawImage(bitmap,0,0,canvas.width,canvas.height); };
+    const previewScale=Math.min(1,256/source.width,256/source.height);
+    draw(Math.max(1,Math.round(source.width*previewScale)),false,Math.max(1,Math.round(source.height*previewScale))); const preview = await encode(canvas,'image/png',1); checkAbort(signal);
     const widths=widthsFor(source.width,settings.widths), variants: Variant[]=[];let encodedBytes=0;
     for(let i=0;i<widths.length;i++) {
       checkAbort(signal); draw(widths[i],settings.format==='jpeg');

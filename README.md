@@ -61,3 +61,5 @@ English/Russian, light/dark, file chooser and drag/drop, per-file progress/retry
 - [createImageBitmap and orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/createImageBitmap)
 
 MIT licensed. Built with React, TypeScript, Vite and fflate.
+
+Queue thumbnails are bounded to 256×256 pixels, including extreme portrait sources. Exported dimensions preserve the chosen responsive width and source aspect ratio.

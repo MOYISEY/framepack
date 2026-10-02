@@ -10,6 +10,7 @@ await sharp(rgba,{raw:{width:800,height:600,channels:4}}).webp({lossless:true}).
 await sharp({create:{width:40,height:20,channels:3,background:'#ff0000'}}).jpeg({quality:10}).toFile(`${dir}/tiny.jpg`);
 await sharp({create:{width:4000,height:3000,channels:3,background:'#889966'}}).jpeg({quality:80}).toFile(`${dir}/large-valid.jpg`);
 await sharp({create:{width:5000,height:3000,channels:3,background:'#889966'}}).png().toFile(`${dir}/large-invalid.png`);
+await sharp({create:{width:256,height:8192,channels:4,background:'#7755cc'}}).png().toFile(`${dir}/tall.png`);
 writeFileSync(`${dir}/corrupt.png`,Buffer.from([137,80,78,71,13,10,26,10,1,2,3]));
 writeFileSync(`${dir}/fake.png`,'<svg xmlns="http://www.w3.org/2000/svg" onload="alert(1)"></svg>');
 // 2-frame animated WebP encoded by sharp; APNG signature crafted for preflight rejection.
