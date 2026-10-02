@@ -1,6 +1,4 @@
 {
-  "builtAt": "2026-10-02T09:52:11.7435232Z",
-  "sourceCommit": "d19e2866a46d5261fad90f382ada576e00d3cb02",
   "assets": [
     {
       "name": "index-ChsamiEy.css",
@@ -8,9 +6,11 @@
       "sha256": "2d8bba12ea68075275554af9601dcd5a496194a35e342b5c35a8d9b9cb4ab1f1"
     },
     {
-      "name": "index-CnjkZXOQ.js",
-      "bytes": 275968,
-      "sha256": "84a1684c92d682258ea62722154033846e4ea754695d1ecd21d441e671d93b46"
+      "name": "index-DVQKLFbO.js",
+      "bytes": 276064,
+      "sha256": "f3cd26d91e024922647ca486145ef4a52bcaf5e659f335770a8de7713211c124"
     }
-  ]
+  ],
+  "builtAt": "2026-10-02T09:59:15.8253451Z",
+  "sourceCommit": "cab113950c7375838da750a2e186b9a751f7f75d"
 }
