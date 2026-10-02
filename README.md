@@ -61,4 +61,3 @@ English/Russian, light/dark, file chooser and drag/drop, per-file progress/retry
 - [createImageBitmap and orientation](https://developer.mozilla.org/en-US/docs/Web/API/Window/createImageBitmap)
 
 MIT licensed. Built with React, TypeScript, Vite and fflate.
-

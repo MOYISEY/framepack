@@ -49,4 +49,3 @@ Run node qa/audit-ui.mjs with the local dev server on port 4173, or set LIVE_URL
 ## Limits
 
 Clean axe output is not a WCAG certification. Live-region DOM semantics were checked without NVDA/JAWS/VoiceOver; touch was emulated without a physical device. This independent audit used Chromium and does not claim real Safari testing. Cross-browser encoders, orientation, transparency, corrupt/large files, ZIP contents, offline behaviour and the deployed site are checked separately by implementation/code-security QA. Larger hit areas for the footer's inline links and the range track remain optional polish; no automated target-size failure was reported.
-

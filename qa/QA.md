@@ -29,3 +29,8 @@ No analytics, remote fonts or image requests exist in the application. The only 
 
 Exact public URL, source/deployment commits and final run results are recorded in the delivery after the live verification.
 
+## Live release
+
+https://moyisey.github.io/framepack/ — HTTP 200; live CSS/JS SHA-256 exactly match the locally verified production build. Full public-site E2E: **33/33 passed**, Chromium/Firefox/Playwright WebKit. [Live evidence](live-checks.json). The recorded source commit is the functional release; the final documentation commit adds this evidence and removes trailing blank lines, with identical built assets.
+
+GitHub [Quality](https://github.com/MOYISEY/framepack/actions/runs/36991185076) and [Pages deployment](https://github.com/MOYISEY/framepack/actions/runs/36991291197) succeeded. The repository is new; no existing project, portfolio or profile README was modified.
