@@ -1,0 +1,16 @@
+{
+  "builtAt": "2026-10-02T09:41:47.7895351Z",
+  "sourceCommit": "6992c227bfbf244f2913b58bfff104541a7595e9",
+  "assets": [
+    {
+      "name": "index-ChsamiEy.css",
+      "bytes": 16258,
+      "sha256": "2d8bba12ea68075275554af9601dcd5a496194a35e342b5c35a8d9b9cb4ab1f1"
+    },
+    {
+      "name": "index-CnjkZXOQ.js",
+      "bytes": 275968,
+      "sha256": "84a1684c92d682258ea62722154033846e4ea754695d1ecd21d441e671d93b46"
+    }
+  ]
+}
