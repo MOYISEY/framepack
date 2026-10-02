@@ -1,0 +1,21 @@
+import { describe, it, expect } from 'vitest';
+import { inspect, widthsFor, safeStem, saving, escapeHtml, responsiveHtml, LIMITS } from './core';
+function png(width:number,height:number,extra?:string) {const a=new Uint8Array(extra?57:45);a.set([137,80,78,71,13,10,26,10]);const v=new DataView(a.buffer);v.setUint32(8,13);a.set([...Buffer.from('IHDR')],12);v.setUint32(16,width);v.setUint32(20,height);if(extra)a.set([...Buffer.from(extra)],37);a.set([...Buffer.from('IEND')],extra?49:37);return a;}
+function webp(width:number,height:number,animated=false) {const a=new Uint8Array(30);a.set(Buffer.from('RIFF'));new DataView(a.buffer).setUint32(4,22,true);a.set(Buffer.from('WEBPVP8X'),8);new DataView(a.buffer).setUint32(16,10,true);a[20]=animated?2:0;const w=width-1,h=height-1;for(let i=0;i<3;i++){a[24+i]=(w>>>(i*8))&255;a[27+i]=(h>>>(i*8))&255;}return a;}
+function jpeg(orientation:number) {const a=new Uint8Array([255,216,255,225,0,34,69,120,105,102,0,0,73,73,42,0,8,0,0,0,1,0,18,1,3,0,1,0,0,0,orientation,0,0,0,0,0,0,0,255,192,0,17,8,0,40,0,60,3,1,17,0,2,17,0,3,17,0,255,218]);return a;}
+describe('preflight',()=>{
+  it('reads PNG and WebP dimensions before allocating a decoder',()=>{expect(inspect(png(100,50))).toMatchObject({width:100,height:50,format:'png'});expect(inspect(webp(123,456))).toMatchObject({width:123,height:456,format:'webp'});});
+  it.each([1,2,3,4,5,6,7,8])('reads JPEG EXIF %s and swaps dimensions only when required',o=>expect(inspect(jpeg(o))).toMatchObject({width:o>=5?40:60,height:o>=5?60:40,orientation:o}));
+  it('rejects oversized headers before decoding',()=>{expect(()=>inspect(png(5000,3000))).toThrow('large');expect(()=>inspect(png(9000,1))).toThrow('large');expect(()=>inspect(webp(9000,1))).toThrow('large');});
+  it('rejects animation and PNG metadata',()=>{expect(()=>inspect(png(10,10,'acTL'))).toThrow('animated');expect(()=>inspect(webp(10,10,true))).toThrow('animated');expect(()=>inspect(png(10,10,'eXIf'))).toThrow('metadata');});
+  it('rejects active content, forged signatures and truncations',()=>{expect(()=>inspect(Buffer.from('<svg/>'))).toThrow('unsupported');expect(()=>inspect(png(10,10).slice(0,30))).toThrow('corrupt');const a=webp(10,10);a[16]=200;expect(()=>inspect(a)).toThrow('corrupt');expect(()=>inspect(jpeg(0))).toThrow('corrupt');});
+  it('bounds-checks hostile EXIF offsets',()=>{const a=jpeg(6);new DataView(a.buffer).setUint32(16,0xfffffff0,true);expect(()=>inspect(a)).toThrow('corrupt');});
+  it('rejects contradictory WebP dimensions instead of decoding an allocation bomb',()=>{const a=new Uint8Array(48);a.set(webp(10,10));const v=new DataView(a.buffer);v.setUint32(4,40,true);a.set(Buffer.from('VP8 '),30);v.setUint32(34,10,true);a.set([157,1,42],41);v.setUint16(44,9000,true);v.setUint16(46,1,true);expect(()=>inspect(a)).toThrow('corrupt');});
+  it('rejects multiple JPEG frame headers before decode',()=>{const original=jpeg(1);const a=Buffer.concat([original.slice(0,57),original.slice(38,57),original.slice(57)]);expect(()=>inspect(a)).toThrow('corrupt');});
+});
+describe('handoff correctness',()=>{
+  it('never enlarges and deduplicates widths',()=>{expect(widthsFor(200,[640,1280,1920])).toEqual([200]);expect(widthsFor(800,[1920,320,640,1280])).toEqual([320,640,800]);});
+  it('keeps names ASCII, bounded, collision-free, and without ZIP paths',()=>{const used=new Set<string>();const names=['../../a.jpg','a.png','a.webp','фото.jpg','../../<script>.png','ＣＯＮ.png','é.png','e.png',''.padStart(1000,'a')+'.jpg'];const stems=names.map(n=>safeStem(n,used));expect(new Set(stems).size).toBe(names.length);for(const s of stems){expect(s).toMatch(/^[a-z0-9_-]+$/);expect(s.length).toBeLessThan(66);}expect(stems[5]).toBe('image-con');});
+  it('reports negative savings with original bytes as denominator',()=>{expect(saving(100,150)).toBe(-50);expect(saving(100,25)).toBe(75);expect(saving(0,0)).toBe(0);expect(LIMITS.outputBytes).toBe(80*1024**2);});
+  it('escapes HTML alt and emits real width descriptors',()=>{expect(escapeHtml('<img "&\'>')).toBe('&lt;img &quot;&amp;&#39;&gt;');const s=responsiveHtml([{name:'a-200w.webp',width:200,height:100}],'<script>"&');expect(s).toContain('a-200w.webp 200w');expect(s).toContain('width="200" height="100"');expect(s).toContain('alt="&lt;script&gt;&quot;&amp;"');expect(s).not.toContain('<script>');});
+});

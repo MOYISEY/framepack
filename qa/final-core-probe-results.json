@@ -1,0 +1,10 @@
+{
+  "pngLength": "corrupt",
+  "jpegMultipleSOF": "corrupt",
+  "webpMismatch": "corrupt",
+  "activeRead": "AbortError",
+  "preAbortedRead": "AbortError",
+  "byteBudget": "output",
+  "encoderCalls": 2,
+  "pass": true
+}

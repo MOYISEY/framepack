@@ -1,0 +1,873 @@
+{
+  "base": "http://127.0.0.1:4174/framepack/",
+  "time": "2026-10-02T09:33:47.576Z",
+  "browser": "Playwright Chromium",
+  "errors": [],
+  "checks": [
+    {
+      "name": "desktop-en-light-empty",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "en",
+        "theme": "light",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 108.5,
+            "right": 295
+          }
+        ],
+        "original": [],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "keyboard-skip-link",
+      "focus": {
+        "tag": "A",
+        "text": "Image queue",
+        "visible": true,
+        "outline": "solid"
+      }
+    },
+    {
+      "name": "keyboard-after-skip",
+      "focus": {
+        "tag": "BUTTON",
+        "text": "Try a demo"
+      }
+    },
+    {
+      "name": "keyboard-width-toggle",
+      "pressed": "true"
+    },
+    {
+      "name": "keyboard-compare-destination",
+      "focus": {
+        "id": "compare-title",
+        "top": 786.625,
+        "text": "03Comparecolor-study.jpg"
+      }
+    },
+    {
+      "name": "desktop-en-light-ready",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "en",
+        "theme": "light",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 108.5,
+            "right": 295
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 609,
+            "renderHeight": 184
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 609,
+            "renderHeight": 184
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "desktop-en-dark-ready",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 108.5,
+            "right": 295
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 609,
+            "renderHeight": 184
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 609,
+            "renderHeight": 184
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "desktop-ru-dark-ready",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "ru",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 108.5,
+            "right": 295
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 609,
+            "renderHeight": 184
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 609,
+            "renderHeight": 184
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "desktop-ru-light-ready",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "ru",
+        "theme": "light",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 108.5,
+            "right": 295
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 609,
+            "renderHeight": 184
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 609,
+            "renderHeight": 184
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "mobile-320-ru-light-ready",
+      "layout": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bodyScrollWidth": 320,
+        "lang": "ru",
+        "theme": "light",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 296,
+            "right": 308
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 294,
+            "right": 307
+          },
+          {
+            "selector": ".width-options",
+            "width": 250,
+            "right": 285
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 123,
+            "right": 285
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 248,
+            "renderHeight": 166
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 248,
+            "renderHeight": 166
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "mobile-320-ru-dark-ready",
+      "layout": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bodyScrollWidth": 320,
+        "lang": "ru",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 296,
+            "right": 308
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 294,
+            "right": 307
+          },
+          {
+            "selector": ".width-options",
+            "width": 250,
+            "right": 285
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 123,
+            "right": 285
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 248,
+            "renderHeight": 166
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 248,
+            "renderHeight": 166
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "mobile-320-en-dark-ready",
+      "layout": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bodyScrollWidth": 320,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 296,
+            "right": 308
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 294,
+            "right": 307
+          },
+          {
+            "selector": ".width-options",
+            "width": 250,
+            "right": 285
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 123,
+            "right": 285
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 248,
+            "renderHeight": 166
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 248,
+            "renderHeight": 166
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "mobile-320-en-light-ready",
+      "layout": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bodyScrollWidth": 320,
+        "lang": "en",
+        "theme": "light",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 296,
+            "right": 308
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 294,
+            "right": 307
+          },
+          {
+            "selector": ".width-options",
+            "width": 250,
+            "right": 285
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 123,
+            "right": 285
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 248,
+            "renderHeight": 166
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 248,
+            "renderHeight": 166
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "keyboard-mobile-table-scroll",
+      "before": 0,
+      "after": 80,
+      "focus": {
+        "active": true,
+        "outline": "solid",
+        "label": "Variants"
+      }
+    },
+    {
+      "name": "text-200-percent-768-en-dark-ready",
+      "description": "Root font-size 200%, desktop/tablet reflow equivalent check; not browser zoom.",
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "bodyScrollWidth": 768,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 732,
+            "right": 750
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 730,
+            "right": 749
+          },
+          {
+            "selector": ".width-options",
+            "width": 686,
+            "right": 727
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 339.5,
+            "right": 727
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 328,
+            "renderHeight": 166
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 328,
+            "renderHeight": 166
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "all-text-200-percent-768-en-dark-ready",
+      "description": "User text enlargement: all precomputed CSS font sizes doubled, including explicit px values; not browser zoom.",
+      "layout": {
+        "width": 768,
+        "scrollWidth": 768,
+        "bodyScrollWidth": 768,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 732,
+            "right": 750
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 730,
+            "right": 749
+          },
+          {
+            "selector": ".width-options",
+            "width": 686,
+            "right": 727
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 339.5,
+            "right": 727
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 328,
+            "renderHeight": 166
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 328,
+            "renderHeight": 166
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "all-text-200-percent-320-en-dark-ready",
+      "description": "Same complete text enlargement under narrow mobile reflow; font sizes initially computed at 768 px.",
+      "layout": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bodyScrollWidth": 320,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 296,
+            "right": 308
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 294,
+            "right": 307
+          },
+          {
+            "selector": ".width-options",
+            "width": 250,
+            "right": 285
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 123,
+            "right": 285
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 248,
+            "renderHeight": 166
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 248,
+            "renderHeight": 166
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "all-text-200-percent-1440-en-dark-ready",
+      "description": "Same complete text enlargement under desktop layout; font sizes initially computed at 768 px.",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 224,
+            "right": 295
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 1600,
+            "naturalHeight": 1000,
+            "renderWidth": 609,
+            "renderHeight": 184
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 400,
+            "renderWidth": 609,
+            "renderHeight": 184
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "desktop-en-dark-error",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 108.5,
+            "right": 295
+          }
+        ],
+        "original": [],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "error-announcement",
+      "liveText": "Ready: 0/1; Failed: 1; Cancelled: 0",
+      "errorAlert": "alert"
+    },
+    {
+      "name": "desktop-en-dark-cancelled",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 108.5,
+            "right": 295
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 3000,
+            "naturalHeight": 2000,
+            "renderWidth": 609,
+            "renderHeight": 184
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 427,
+            "renderWidth": 609,
+            "renderHeight": 184
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "cancel-announcement",
+      "liveText": "Ready: 1/8; Failed: 0; Cancelled: 7",
+      "cancelled": 7
+    },
+    {
+      "name": "desktop-en-dark-retried",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 108.5,
+            "right": 295
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 3000,
+            "naturalHeight": 2000,
+            "renderWidth": 609,
+            "renderHeight": 184
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 427,
+            "renderWidth": 609,
+            "renderHeight": 184
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "desktop-en-dark-rerun-ready",
+      "layout": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "lang": "en",
+        "theme": "dark",
+        "recipeGeometry": [
+          {
+            "selector": ".recipe",
+            "width": 270,
+            "right": 318
+          },
+          {
+            "selector": ".recipe fieldset",
+            "width": 268,
+            "right": 317
+          },
+          {
+            "selector": ".width-options",
+            "width": 224,
+            "right": 295
+          },
+          {
+            "selector": ".width-options button:last-child",
+            "width": 108.5,
+            "right": 295
+          }
+        ],
+        "original": [
+          {
+            "naturalWidth": 3000,
+            "naturalHeight": 2000,
+            "renderWidth": 609,
+            "renderHeight": 184
+          },
+          {
+            "naturalWidth": 640,
+            "naturalHeight": 427,
+            "renderWidth": 609,
+            "renderHeight": 184
+          }
+        ],
+        "oversized": []
+      },
+      "violations": []
+    },
+    {
+      "name": "touch-targets",
+      "targets": [
+        {
+          "tag": "INPUT",
+          "text": "",
+          "width": 224,
+          "height": 16
+        },
+        {
+          "tag": "A",
+          "text": "GitHub",
+          "width": 38,
+          "height": 16
+        }
+      ]
+    },
+    {
+      "name": "touch-emulation-375-demo-build-theme",
+      "pressed": "true",
+      "ready": 3,
+      "violations": []
+    }
+  ]
+}

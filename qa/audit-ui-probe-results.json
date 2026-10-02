@@ -1,0 +1,98 @@
+{
+  "urlsAfterBuild": [
+    "image/png",
+    "image/jpeg",
+    "image/webp",
+    "image/png",
+    "image/png"
+  ],
+  "sourcePreview": {
+    "width": 1600,
+    "height": 1000
+  },
+  "variants": [
+    {
+      "path": "assets/color-study-640w.webp",
+      "actualBytes": 19952,
+      "manifestBytes": 19952,
+      "actualWidth": 640,
+      "actualHeight": 400,
+      "manifestWidth": 640,
+      "manifestHeight": 400,
+      "actualFormat": "webp",
+      "mime": "image/webp",
+      "pass": true
+    },
+    {
+      "path": "assets/color-study-1280w.webp",
+      "actualBytes": 39618,
+      "manifestBytes": 39618,
+      "actualWidth": 1280,
+      "actualHeight": 800,
+      "manifestWidth": 1280,
+      "manifestHeight": 800,
+      "actualFormat": "webp",
+      "mime": "image/webp",
+      "pass": true
+    },
+    {
+      "path": "assets/color-study-1600w.webp",
+      "actualBytes": 59904,
+      "manifestBytes": 59904,
+      "actualWidth": 1600,
+      "actualHeight": 1000,
+      "manifestWidth": 1600,
+      "manifestHeight": 1000,
+      "actualFormat": "webp",
+      "mime": "image/webp",
+      "pass": true
+    },
+    {
+      "path": "assets/transparent-mark-640w.webp",
+      "actualBytes": 2160,
+      "manifestBytes": 2160,
+      "actualWidth": 640,
+      "actualHeight": 640,
+      "manifestWidth": 640,
+      "manifestHeight": 640,
+      "actualFormat": "webp",
+      "mime": "image/webp",
+      "pass": true
+    },
+    {
+      "path": "assets/transparent-mark-900w.webp",
+      "actualBytes": 2926,
+      "manifestBytes": 2926,
+      "actualWidth": 900,
+      "actualHeight": 900,
+      "manifestWidth": 900,
+      "manifestHeight": 900,
+      "actualFormat": "webp",
+      "mime": "image/webp",
+      "pass": true
+    },
+    {
+      "path": "assets/rotated-study-400w.webp",
+      "actualBytes": 3768,
+      "manifestBytes": 3768,
+      "actualWidth": 400,
+      "actualHeight": 600,
+      "manifestWidth": 400,
+      "manifestHeight": 600,
+      "actualFormat": "webp",
+      "mime": "image/webp",
+      "pass": true
+    }
+  ],
+  "allVariantsPass": true,
+  "assetTotalMatches": true,
+  "htmlEscapes": true,
+  "urlsAfterClear": [],
+  "noImageUrlLeaks": true,
+  "cancelledAll": true,
+  "retryStatuses": [
+    " Ready",
+    " Cancelled",
+    " Cancelled"
+  ]
+}
